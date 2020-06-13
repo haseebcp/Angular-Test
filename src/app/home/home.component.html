@@ -12,14 +12,14 @@
     <thead>
     <tr>
       <th></th>
+      <th>Title</th>
       <th>Firstname</th>
       <th>Lastname</th>
-      <th>Title</th>
       <th>Gender</th>
       <th>Email</th>
       <th>User Name</th>
       <th>Password</th>
-      <th>DOb</th>
+      <th>Dob</th>
       <th>Phone</th>
       <th>cell</th>
       <th>Street</th>
@@ -31,9 +31,9 @@
     <tbody>
     <tr *ngFor="let data of userDetails | searchfilter: searchkey">
       <td><img src="{{data.user?.picture?.thumbnail}}"></td>
+      <td>{{data.user.name.title}}</td>
       <td>{{data.user.name.first}}</td>
       <td>{{data.user.name.last}}</td>
-      <td>{{data.user.name.title}}</td>
       <td>{{data.user.gender}}</td>
       <td>{{data.user.email}}</td>
       <td>{{data.user.username}}</td>
