@@ -1,0 +1,52 @@
+<div class="list-wrap">
+  <div class="header-section" style="text-align: center">
+    <h1>User LIST</h1>
+  </div>
+  <hr/>
+  <div class="search-wrap">
+    <div><input type="text" placeholder="Search.." name="search" [(ngModel)]="searchkey"></div>
+    <div> <button class="btn btn-primary" (click)="isAddUser = true"> Add User</button></div>
+  </div>
+  <app-registration-form *ngIf="isAddUser" (onSaveUser)="saved($event)" ></app-registration-form>
+  <table class="table" *ngIf="!isAddUser">
+    <thead>
+    <tr>
+      <th></th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Title</th>
+      <th>Gender</th>
+      <th>Email</th>
+      <th>User Name</th>
+      <th>Password</th>
+      <th>DOb</th>
+      <th>Phone</th>
+      <th>cell</th>
+      <th>Street</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let data of userDetails | searchfilter: searchkey">
+      <td><img src="{{data.user?.picture?.thumbnail}}"></td>
+      <td>{{data.user.name.first}}</td>
+      <td>{{data.user.name.last}}</td>
+      <td>{{data.user.name.title}}</td>
+      <td>{{data.user.gender}}</td>
+      <td>{{data.user.email}}</td>
+      <td>{{data.user.username}}</td>
+      <td>{{data.user.password}}</td>
+      <td>{{data.user.dob}}</td>
+      <td>{{data.user.phone}}</td>
+      <td>{{data.user.cell}}</td>
+      <td>{{data.user?.location?.street}}</td>
+      <td>{{data.user?.location?.city}}</td>
+      <td>{{data.user?.location?.state}}</td>
+      <td>{{data.user?.location?.zip}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>

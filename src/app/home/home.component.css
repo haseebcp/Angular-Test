@@ -1,0 +1,12 @@
+.list-wrap {
+  width: 100%;
+  overflow-x: scroll;
+  padding: 80px;
+}
+table {
+  margin-top: 50px;
+}
+.search-wrap {
+  display: flex;
+  justify-content: space-between;
+}
